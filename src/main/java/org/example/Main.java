@@ -4,33 +4,43 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = new int[100000];
-        for(int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random() * 100);
+        int[] arr1 = new int[100000];
+        for(int i = 0; i < arr1.length; i++) {
+            arr1[i] = (int) (Math.random() * 100);
         }
 
         // На 1000 элементов выполняется за 2 миллисекунды
         // На 10_000 элементов выполняется за 9-11 миллисекунды
         // На 100_000 элементов выполняется за 570-580 миллисекунд
 
-//        long m = System.currentTimeMillis();
-//        insertionSort(arr);
-//        System.out.println((double) (System.currentTimeMillis() - m));
+        long m = System.currentTimeMillis();
+        insertionSort(arr1);
+        System.out.println((double) (System.currentTimeMillis() - m));
+
+        int[] arr2 = new int[100000];
+        for(int i = 0; i < arr2.length; i++) {
+            arr2[i] = (int) (Math.random() * 100);
+        }
 
         // На 1000 элементов выполняется за 2-4 миллисекунды
         // На 10_000 элементов выполняется за 29-33 миллисекунды
         // На 100_000 элементов выполняется за 2560-2570 миллисекунды
 
-//        long n = System.currentTimeMillis();
-//        selectionSort(arr);
-//        System.out.println((double) (System.currentTimeMillis() - n));
+        long n = System.currentTimeMillis();
+        selectionSort(arr2);
+        System.out.println((double) (System.currentTimeMillis() - n));
+
+        int[] arr3 = new int[100000];
+        for(int i = 0; i < arr3.length; i++) {
+            arr3[i] = (int) (Math.random() * 100);
+        }
 
         // На 1000 элементов выполняется за 1 миллисекунду
         // На 10_000 элементов выполняется за 2 миллисекунды
         // На 100_000 элементов выполняется за 8-13 миллисекунды
 
         long x = System.currentTimeMillis();
-        Arrays.sort(arr);
+        Arrays.sort(arr3);
         System.out.println((double) (System.currentTimeMillis() - x));
     }
 
